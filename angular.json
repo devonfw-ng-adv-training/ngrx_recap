@@ -66,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ng-adv-refresher:build"
+            "buildTarget": "ng-adv-refresher:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ng-adv-refresher:build:production"
+              "buildTarget": "ng-adv-refresher:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ng-adv-refresher:build"
+            "buildTarget": "ng-adv-refresher:build"
           }
         },
         "test": {
@@ -123,6 +123,9 @@
           }
         }
       }
-    }},
-  "defaultProject": "ng-adv-refresher"
+    }
+  },
+  "cli": {
+    "analytics": false
+  }
 }
