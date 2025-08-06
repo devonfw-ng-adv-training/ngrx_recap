@@ -4,13 +4,11 @@
 
 This project walks you through setting up and using NgRx in an Angular 17 application using a simple Counter app. You'll learn how to configure NgRx Store, Actions, Reducers, Selectors, and Effects step-by-step.
 
-### further read
+### 📚 Further Read
 
 - [angular foundations: all slides](https://devonfw-training.github.io/devon4ng-training/agenda/foundations-remote.html)
 - [angular foundations: ngrx intro](https://devonfw-training.github.io/devon4ng-training/ngrx/intro.html)
 - [official ngrx docs](https://ngrx.io/docs)
-
-### content of exercise
 
 ## 📁 Git Branch Structure
 | Branch Name                     | Description                                      |
@@ -21,7 +19,7 @@ This project walks you through setting up and using NgRx in an Angular 17 applic
 | [exercise/4-ngrx-effect](https://github.com/devonfw-ng-adv-training/refresher/tree/exercise/4-ngrx-effects)        | Add NgRx Effect for delayed increment            |
 
 If you have trouble during one step, you can cheat by taking a look at the specified backup branch 
-(start with 0-start-setup, result of first step is 1-finished-ngrx-setup, and so on.)
+(start with 0-initial-start, result of first step is exercise/1-ngrx-basic-setup, and so on.)
 
 *hint: provided solution in backup branch may not be the best possible solution*
 
@@ -45,7 +43,7 @@ Set up an appplication with NgRx Store and Effects (empty configuration).
 
 ### 1. Check out project
     
-    git clone https://github.com/devonfw-ng-adv-training/ngrx--recapp
+    git clone https://github.com/devonfw-ng-adv-training/ngrx-recap
 
 ### 2. Start with initial branch
 
@@ -352,12 +350,12 @@ delayedIncrement() {
 ### 5. Update counter-store.component.html
 
 ```html
-<button (click)="delayedIncrement()">Delayed +</button>
+<button (click)="delayedIncrement()">Delay+</button>
 ```
 
 ### Verify:
 
-Clicking "Delayed +" will update the counter after 5 seconds (NgRx Effect).
+Clicking "Delay+" will update the counter after 5 seconds (NgRx Effect).
 
 ### Backup branch
 
