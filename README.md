@@ -350,12 +350,12 @@ delayedIncrement() {
 ### 5. Update counter-store.component.html
 
 ```html
-<button (click)="delayedIncrement()">Delayed +</button>
+<button (click)="delayedIncrement()">Delay+</button>
 ```
 
 ### Verify:
 
-Clicking "Delayed +" will update the counter after 5 seconds (NgRx Effect).
+Clicking "Delay+" will update the counter after 5 seconds (NgRx Effect).
 
 ### Backup branch
 
