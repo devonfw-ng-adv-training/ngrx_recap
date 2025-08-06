@@ -28,4 +28,8 @@ export class CounterStoreComponent {
   decrement() {
     this.store.dispatch(counterActions.decrement());
   }
+
+  delayedIncrement() {
+    this.store.dispatch(counterActions.delayedIncrement());
+  }
 }

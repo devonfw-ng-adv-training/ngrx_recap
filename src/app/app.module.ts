@@ -7,6 +7,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { CounterLocalComponent } from './counter-local/counter-local.component';
 import { counterReducer } from './store/counter.reducer';
 import { CounterStoreComponent } from './counter-store/counter-store.component';
+import { EffectsModule } from '@ngrx/effects';
+import { CounterEffects } from './store/counter.effects';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { CounterStoreComponent } from './counter-store/counter-store.component';
   imports: [
     BrowserModule,
     StoreModule.forRoot({ counter: counterReducer}),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
+    EffectsModule.forRoot([CounterEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]
