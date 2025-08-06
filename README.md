@@ -16,7 +16,7 @@ This project walks you through setting up and using NgRx in an Angular 17 applic
 | [exercise/1-ngrx-basic-setup](https://github.com/devonfw-ng-adv-training/ngrx_recap/tree/exercise/1-ngrx-basic-setup)   | NgRx base setup                                  |
 | [exercise/2-counter-component](https://github.com/devonfw-ng-adv-training/ngrx_recap/tree/exercise/2-counter-component)  | Add CounterComponent UI                          |
 | [exercise/3-ngrx-counter-store](https://github.com/devonfw-ng-adv-training/ngrx_recap/tree/exercise/3-ngrx-counter-store) | Setup NgRx store, actions, reducer, selectors    |
-| [exercise/4-ngrx-effect](https://github.com/devonfw-ng-adv-training/refresher/tree/exercise/4-ngrx-effect)        | Add NgRx Effect for delayed increment            |
+| [exercise/4-ngrx-effect](https://github.com/devonfw-ng-adv-training/ngrx_recap/tree/exercise/4-ngrx-effect)        | Add NgRx Effect for delayed increment            |
 
 If you have trouble during one step, you can cheat by taking a look at the specified backup branch 
 (start with 0-initial-start, result of first step is exercise/1-ngrx-basic-setup, and so on.)
@@ -32,7 +32,7 @@ If there are questions, you can contact one of your trainers or keep them for th
 | 1        | Basic Setup of NgRx            | Set up NgRx Store and Effects with empty configuration              | NgRx Store, DevTools, Initial Setup               | [exercise/1-ngrx-basic-setup](https://github.com/devonfw-ng-adv-training/ngrx_recap/tree/exercise/1-ngrx-basic-setup) |
 | 2        | Add Counter Component UI       | Create a simple counter component with increment/decrement buttons  | Angular Component, UI Binding                     | [exercise/2-counter-component](https://github.com/devonfw-ng-adv-training/ngrx_recap/tree/exercise/2-counter-component)|
 | 3        | Add NgRx Counter Store         | Manage counter state using NgRx actions, reducer, and selectors     | Actions, Reducer, Selectors, State Management     | [exercise/3-ngrx-counter-store](https://github.com/devonfw-ng-adv-training/ngrx_recap/tree/exercise/3-ngrx-counter-store)|
-| 4        | Add NgRx Effect for Delayed Increment | Dispatch increment action after a delay using NgRx Effects     | Effects, Async Actions, Side Effects              | [exercise/4-ngrx-effect](https://github.com/devonfw-ng-adv-training/refresher/tree/exercise/4-ngrx-effect) 
+| 4        | Add NgRx Effect for Delayed Increment | Dispatch increment action after a delay using NgRx Effects     | Effects, Async Actions, Side Effects              | [exercise/4-ngrx-effect](https://github.com/devonfw-ng-adv-training/ngrx_recap/tree/exercise/4-ngrx-effect) 
 
 ## Exercise 1. Basic Setup of ngrx
 
@@ -359,4 +359,4 @@ Clicking "Delay+" will update the counter after 5 seconds (NgRx Effect).
 
 ### Backup branch
 
-[exercise/4-ngrx-effect](https://github.com/devonfw-ng-adv-training/refresher/tree/exercise/4-ngrx-effect) and it will be used in the next step
+[exercise/4-ngrx-effect](https://github.com/devonfw-ng-adv-training/ngrx_recap/tree/exercise/4-ngrx-effect) and it will be used in the next step
