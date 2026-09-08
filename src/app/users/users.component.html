@@ -1,0 +1,25 @@
+<section class="users-panel">
+  <div class="users-header">
+    <div>
+      <p class="eyebrow">NgRx Effects</p>
+      <h2>Users</h2>
+    </div>
+    <button type="button" (click)="loadUsers()" [disabled]="loading$ | async">
+      Reload
+    </button>
+  </div>
+
+  <p *ngIf="loading$ | async" class="status">Loading users...</p>
+  <p *ngIf="error$ | async as error" class="status error">{{ error }}</p>
+
+  <ul *ngIf="users$ | async as users" class="user-list">
+    <li *ngFor="let user of users">
+      <strong>{{ user.name }}</strong>
+      <span>{{ user.email }}</span>
+    </li>
+  </ul>
+
+  <p *ngIf="(users$ | async)?.length === 0 && !(loading$ | async) && !(error$ | async)" class="status">
+    No users found.
+  </p>
+</section>

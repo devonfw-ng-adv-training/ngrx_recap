@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { getCounter } from '../store/counter.selectors';
-import * as counterActions from '../store/counter.actions';
+import * as counterSelectors from '../store/counter/counter.selectors';
+import * as counterActions from '../store/counter/counter.actions';
+import { AppState } from '../store/app-state';
 
 @Component({
   selector: 'app-counter-store',
@@ -13,8 +14,8 @@ import * as counterActions from '../store/counter.actions';
 export class CounterStoreComponent {
   counter$: Observable<number>;
 
-  constructor(private store: Store) {
-    this.counter$ = store.select(getCounter);
+  constructor(private store: Store<AppState>) {
+    this.counter$ = store.select(counterSelectors.getCounter);
   }
 
   increment() {

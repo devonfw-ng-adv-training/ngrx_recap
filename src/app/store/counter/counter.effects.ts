@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { delay, map } from "rxjs";
-import * as counterActions from '../store/counter.actions';
+import * as counterActions from '../counter/counter.actions';
 
 @Injectable()
 export class CounterEffects {
