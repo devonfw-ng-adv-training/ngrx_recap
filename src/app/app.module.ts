@@ -9,22 +9,20 @@ import { counterReducer } from './store/counter/counter.reducer';
 import { CounterStoreComponent } from './counter-store/counter-store.component';
 import { EffectsModule } from '@ngrx/effects';
 import { CounterEffects } from './store/counter/counter.effects';
-import { usersReducer } from './store/users/users.reducer';
-import { UsersEffects } from './store/users/users.effects';
-import { UsersComponent } from './users/users.component';
+import { UsersModule } from './users/users.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     CounterLocalComponent,
-    CounterStoreComponent,
-    UsersComponent
+    CounterStoreComponent
   ],
   imports: [
     BrowserModule,
-    StoreModule.forRoot({ counter: counterReducer, users: usersReducer }),
+    StoreModule.forRoot({ counter: counterReducer }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
-    EffectsModule.forRoot([CounterEffects, UsersEffects])
+    EffectsModule.forRoot([CounterEffects]),
+    UsersModule
   ],
   providers: [],
   bootstrap: [AppComponent]
