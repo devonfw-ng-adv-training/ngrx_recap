@@ -176,7 +176,11 @@ Define the root state interface.
 
 ```ts
 export interface AppState {
-  counter: number;
+  counter: CounterState;
+}
+
+export interface CounterState {
+  value: number;
 }
 ```
 
@@ -198,15 +202,24 @@ Implement reducer logic for counter actions.
 
 ```ts
 import { createReducer, on } from "@ngrx/store";
-import { increment, decrement, reset } from "./counter.actions";
+import { CounterState } from "./app-state";
+import * as counterActions from "./counter.actions";
 
-export const initialState = 0;
+export const initialState: CounterState = {
+  value: 0,
+};
 
 export const counterReducer = createReducer(
   initialState,
-  on(increment, (state) => state + 1),
-  on(decrement, (state) => state - 1),
-  on(reset, () => 0),
+  on(counterActions.increment, (state) => ({
+    ...state,
+    value: state.value + 1,
+  })),
+  on(counterActions.decrement, (state) => ({
+    ...state,
+    value: state.value - 1,
+  })),
+  on(counterActions.reset, (state) => initialState),
 );
 ```
 
@@ -216,9 +229,11 @@ Define a selector to get the counter value from the state.
 
 ```ts
 import { createSelector } from "@ngrx/store";
-import { AppState } from "src/app/store";
+import { AppState } from "./app-state";
 
 export const selectCounter = (state: AppState) => state.counter;
+
+export const selectCounterValue = createSelector(selectCounter, (state) => state.value);
 ```
 
 ### 5. Update app.module.ts
@@ -244,8 +259,9 @@ Add logic with store dispatch and selector subscription.
 import { Component } from "@angular/core";
 import { Store } from "@ngrx/store";
 import { Observable } from "rxjs";
-import { getCounter } from "../store/counter.selectors";
+import { AppState } from "../store/app-state";
 import * as counterActions from "../store/counter.actions";
+import { selectCounterValue } from "../store/counter.selectors";
 
 @Component({
   selector: "app-counter-store",
@@ -256,8 +272,8 @@ import * as counterActions from "../store/counter.actions";
 export class CounterStoreComponent {
   counter$: Observable<number>;
 
-  constructor(private store: Store) {
-    this.counter$ = store.select(getCounter);
+  constructor(private store: Store<AppState>) {
+    this.counter$ = store.select(selectCounterValue);
   }
 
   increment() {
@@ -316,7 +332,7 @@ export class CounterEffects {
   delayedIncrement$ = createEffect(() =>
     this.actions$.pipe(
       ofType(counterActions.delayedIncrement),
-      delay(5000), // Delay by 5 seconds
+      delay(2000), // Delay by 2 seconds
       map(() => counterActions.increment()),
     ),
   );
