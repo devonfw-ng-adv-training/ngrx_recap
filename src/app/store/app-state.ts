@@ -1,3 +1,7 @@
 export interface AppState {
-    counter: number;
+  counter: CounterState;
+}
+
+export interface CounterState {
+  value: number;
 }
