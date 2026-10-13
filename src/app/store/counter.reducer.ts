@@ -1,11 +1,20 @@
-import { createReducer, on } from "@ngrx/store";
-import * as counterActions  from "./counter.actions";
+import { createReducer, on } from '@ngrx/store';
+import { CounterState } from './app-state';
+import * as counterActions from './counter.actions';
 
-export const initialState = 0;
+export const initialState: CounterState = {
+  value: 0,
+};
 
 export const counterReducer = createReducer(
-    initialState,
-    on(counterActions.increment, (state) => state + 1),
-    on(counterActions.decrement, (state) => state - 1),
-    on(counterActions.reset, () => 0),
+  initialState,
+  on(counterActions.increment, (state) => ({
+    ...state,
+    value: state.value + 1,
+  })),
+  on(counterActions.decrement, (state) => ({
+    ...state,
+    value: state.value - 1,
+  })),
+  on(counterActions.reset, (state) => initialState),
 );
