@@ -11,38 +11,40 @@ This project walks you through setting up and using NgRx in an Angular 17 applic
 - [official ngrx docs](https://ngrx.io/docs)
 
 ## 📁 Git Branch Structure
-| Branch Name                     | Description                                      |
-|---------------------------------|--------------------------------------------------|
-| [exercise/1-ngrx-basic-setup](https://github.com/devonfw-ng-adv-training/ngrx_recap/tree/exercise/1-ngrx-basic-setup)   | NgRx base setup                                  |
-| [exercise/2-counter-component](https://github.com/devonfw-ng-adv-training/ngrx_recap/tree/exercise/2-counter-component)  | Add CounterComponent UI                          |
-| [exercise/3-ngrx-counter-store](https://github.com/devonfw-ng-adv-training/ngrx_recap/tree/exercise/3-ngrx-counter-store) | Setup NgRx store, actions, reducer, selectors    |
-| [exercise/4-ngrx-effect](https://github.com/devonfw-ng-adv-training/ngrx_recap/tree/exercise/4-ngrx-effect)        | Add NgRx Effect for delayed increment            |
 
-If you have trouble during one step, you can cheat by taking a look at the specified backup branch 
+| Branch Name                                                                                                               | Description                                   |
+| ------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------- |
+| [exercise/1-ngrx-basic-setup](https://github.com/devonfw-ng-adv-training/ngrx_recap/tree/exercise/1-ngrx-basic-setup)     | NgRx base setup                               |
+| [exercise/2-counter-component](https://github.com/devonfw-ng-adv-training/ngrx_recap/tree/exercise/2-counter-component)   | Add CounterComponent UI                       |
+| [exercise/3-ngrx-counter-store](https://github.com/devonfw-ng-adv-training/ngrx_recap/tree/exercise/3-ngrx-counter-store) | Setup NgRx store, actions, reducer, selectors |
+| [exercise/4-ngrx-effect](https://github.com/devonfw-ng-adv-training/ngrx_recap/tree/exercise/4-ngrx-effect)               | Add NgRx Effect for delayed increment         |
+
+If you have trouble during one step, you can cheat by taking a look at the specified backup branch
 (start with 0-initial-start, result of first step is exercise/1-ngrx-basic-setup, and so on.)
 
-*hint: provided solution in backup branch may not be the best possible solution*
+_hint: provided solution in backup branch may not be the best possible solution_
 
 If there are questions, you can contact one of your trainers or keep them for the training.
 
 ## 📝 Summary of Exercises
 
-| Exercise | Title                          | Goal                                                                 | Key Concepts Covered                              | Backup Branch                  |
-|----------|--------------------------------|----------------------------------------------------------------------|---------------------------------------------------|--------------------------------|
-| 1        | Basic Setup of NgRx            | Set up NgRx Store and Effects with empty configuration              | NgRx Store, DevTools, Initial Setup               | [exercise/1-ngrx-basic-setup](https://github.com/devonfw-ng-adv-training/ngrx_recap/tree/exercise/1-ngrx-basic-setup) |
-| 2        | Add Counter Component UI       | Create a simple counter component with increment/decrement buttons  | Angular Component, UI Binding                     | [exercise/2-counter-component](https://github.com/devonfw-ng-adv-training/ngrx_recap/tree/exercise/2-counter-component)|
-| 3        | Add NgRx Counter Store         | Manage counter state using NgRx actions, reducer, and selectors     | Actions, Reducer, Selectors, State Management     | [exercise/3-ngrx-counter-store](https://github.com/devonfw-ng-adv-training/ngrx_recap/tree/exercise/3-ngrx-counter-store)|
-| 4        | Add NgRx Effect for Delayed Increment | Dispatch increment action after a delay using NgRx Effects     | Effects, Async Actions, Side Effects              | [exercise/4-ngrx-effect](https://github.com/devonfw-ng-adv-training/ngrx_recap/tree/exercise/4-ngrx-effect) 
+| Exercise | Title                                 | Goal                                                               | Key Concepts Covered                          | Backup Branch                                                                                                             |
+| -------- | ------------------------------------- | ------------------------------------------------------------------ | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| 1        | Basic Setup of NgRx                   | Set up NgRx Store and Effects with empty configuration             | NgRx Store, DevTools, Initial Setup           | [exercise/1-ngrx-basic-setup](https://github.com/devonfw-ng-adv-training/ngrx_recap/tree/exercise/1-ngrx-basic-setup)     |
+| 2        | Add Counter Component UI              | Create a simple counter component with increment/decrement buttons | Angular Component, UI Binding                 | [exercise/2-counter-component](https://github.com/devonfw-ng-adv-training/ngrx_recap/tree/exercise/2-counter-component)   |
+| 3        | Add NgRx Counter Store                | Manage counter state using NgRx actions, reducer, and selectors    | Actions, Reducer, Selectors, State Management | [exercise/3-ngrx-counter-store](https://github.com/devonfw-ng-adv-training/ngrx_recap/tree/exercise/3-ngrx-counter-store) |
+| 4        | Add NgRx Effect for Delayed Increment | Dispatch increment action after a delay using NgRx Effects         | Effects, Async Actions, Side Effects          | [exercise/4-ngrx-effect](https://github.com/devonfw-ng-adv-training/ngrx_recap/tree/exercise/4-ngrx-effect)               |
 
 ## Exercise 1. Basic Setup of ngrx
 
 ### Goal:
-Set up an appplication with NgRx Store and Effects (empty configuration). 
+
+Set up an appplication with NgRx Store and Effects (empty configuration).
 
 ### Steps:
 
 ### 1. Check out project
-    
+
     git clone https://github.com/devonfw-ng-adv-training/ngrx-recap
 
 ### 2. Start with initial branch
@@ -50,37 +52,37 @@ Set up an appplication with NgRx Store and Effects (empty configuration).
     git checkout 0-initial-start
 
 ### 3. Install dependencies
-    
-    npm install 
 
-### 4. Add [@ngrx/store](https://ngrx.io/guide/store/install) &  [@ngrx/store-devtools](https://ngrx.io/guide/store-devtools/install) to project
-    
-    ng add @ngrx/store@17.1.1
-    ng add @ngrx/store-devtools@17.1.1
+    npm install
+
+### 4. Add [@ngrx/store](https://ngrx.io/guide/store/install) & [@ngrx/store-devtools](https://ngrx.io/guide/store-devtools/install) to project
+
+    ng add @ngrx/store@22
+    ng add @ngrx/store-devtools@22
+    ng add @ngrx/effects@22
 
 ### 5. Install [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension) for your favorite browser
-  
-  - [Firefox](https://addons.mozilla.org/en-US/firefox/addon/reduxdevtools)
-  - [Chrome](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
-  - [Internet Explorer](https://www.youtube.com/watch?v=oHg5SJYRHA0)
+
+- [Firefox](https://addons.mozilla.org/en-US/firefox/addon/reduxdevtools)
+- [Chrome](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
+- [Internet Explorer](https://www.youtube.com/watch?v=oHg5SJYRHA0)
 
 ### 6. Update app.module.ts
 
 ```ts
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent } from './app.component';
-import { StoreModule } from '@ngrx/store';
-import { EffectsModule } from '@ngrx/effects';
+import { NgModule, isDevMode } from "@angular/core";
+
+import { BrowserModule } from "@angular/platform-browser";
+import { EffectsModule } from "@ngrx/effects";
+import { StoreModule } from "@ngrx/store";
+import { StoreDevtoolsModule } from "@ngrx/store-devtools";
+import { AppComponent } from "./app.component";
+
 @NgModule({
- declarations: [AppComponent],
- imports: [
-   BrowserModule,
-   StoreModule.forRoot({}, {}),
-   EffectsModule.forRoot([]),
- ],
- providers: [],
- bootstrap: [AppComponent],
+  declarations: [AppComponent],
+  imports: [BrowserModule, StoreModule.forRoot({}, {}), StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }), EffectsModule.forRoot([])],
+  providers: [],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
 ```
@@ -89,10 +91,9 @@ export class AppModule {}
 
     ng serve
 
-### 8. Verify setup: 
+### 8. Verify setup:
 
 Open Redux DevTools in your browser and confirm the presence of @ngrx/store/init.
-
 
 ### Backup branch
 
@@ -101,7 +102,8 @@ Open Redux DevTools in your browser and confirm the presence of @ngrx/store/init
 ## Exercise 2: Add Counter Component UI
 
 ### Goal:
-Generate a basic counter component with increment/decrement buttons. 
+
+Generate a basic counter component with increment/decrement buttons.
 
 ### Steps:
 
@@ -118,15 +120,14 @@ Generate a basic counter component with increment/decrement buttons.
 ### 3. Update counter-local.component.ts to define local counter logic.
 
 ```ts
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-counter-local',
+  selector: "app-counter-local",
   standalone: false,
-  templateUrl: './counter-local.component.html',
-  styleUrl: './counter-local.component.css'
+  templateUrl: "./counter-local.component.html",
+  styleUrl: "./counter-local.component.css",
 })
-
 export class CounterLocalComponent {
   counter = 0;
 
@@ -161,67 +162,68 @@ UI after adding basic buttons and counter logic.
 
 [exercise/2-counter-component](https://github.com/devonfw-ng-adv-training/ngrx_recap/tree/exercise/2-counter-component) and it will be used in the next step
 
-
 ## Exercise 3: Add NgRx Counter Store
 
 ### Goal:
-Use NgRx to manage counter state with actions, reducer, and selectors. 
+
+Use NgRx to manage counter state with actions, reducer, and selectors.
 
 ### Steps:
 
 ### 1. Create file:src/app/store/app-state.ts
-       Define the root state interface.
+
+Define the root state interface.
 
 ```ts
 export interface AppState {
-    counter: number;
+  counter: number;
 }
 ```
 
 ### 2. Create file:src/app/store/counter.action.ts
-       Define `increment`, `decrement`, and `reset` actions.
+
+Define `increment`, `decrement`, and `reset` actions.
 
 ```ts
-import { createAction } from '@ngrx/store';
+import { createAction } from "@ngrx/store";
 
-export const increment = createAction('[Counter] Increment');
-export const decrement = createAction('[Counter] Decrement');
-export const reset = createAction('[Counter] Reset');
+export const increment = createAction("[Counter] Increment");
+export const decrement = createAction("[Counter] Decrement");
+export const reset = createAction("[Counter] Reset");
 ```
 
 ### 3. Create file:src/app/store/counter.reducer.ts
-       Implement reducer logic for counter actions.
+
+Implement reducer logic for counter actions.
 
 ```ts
-import { createReducer, on } from '@ngrx/store';
-import { increment, decrement, reset } from './counter.actions';
+import { createReducer, on } from "@ngrx/store";
+import { increment, decrement, reset } from "./counter.actions";
 
 export const initialState = 0;
 
 export const counterReducer = createReducer(
- initialState,
- on(increment, (state) => state + 1),
- on(decrement, (state) => state - 1),
- on(reset, () => 0)
+  initialState,
+  on(increment, (state) => state + 1),
+  on(decrement, (state) => state - 1),
+  on(reset, () => 0),
 );
 ```
 
 ### 4. Create file:src/app/store/counter.selectors.ts
-       Define a selector to get the counter value from the state.
+
+Define a selector to get the counter value from the state.
 
 ```ts
-import { createSelector } from '@ngrx/store';
-import { AppState } from 'src/app/store';
+import { createSelector } from "@ngrx/store";
+import { AppState } from "src/app/store";
 
 export const selectCounter = (state: AppState) => state.counter;
-export const getCounter = createSelector(
-  selectCounter,
-  (counter) => counter
-);
 ```
 
 ### 5. Update app.module.ts
-       Register the reducer using `StoreModule.forRoot`.
+
+Register the reducer using `StoreModule.forRoot`.
 
 ```ts
 import { counterReducer } from './store/counter.reducer';
@@ -235,20 +237,21 @@ import { counterReducer } from './store/counter.reducer';
 ```
 
 ### 6. Update counter-store.component.ts
-       Add logic with store dispatch and selector subscription.
+
+Add logic with store dispatch and selector subscription.
 
 ```ts
-import { Component } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import { getCounter } from '../store/counter.selectors';
-import * as counterActions from '../store/counter.actions';
+import { Component } from "@angular/core";
+import { Store } from "@ngrx/store";
+import { Observable } from "rxjs";
+import { getCounter } from "../store/counter.selectors";
+import * as counterActions from "../store/counter.actions";
 
 @Component({
-  selector: 'app-counter-store',
+  selector: "app-counter-store",
   standalone: false,
-  templateUrl: './counter-store.component.html',
-  styleUrl: './counter-store.component.css'
+  templateUrl: "./counter-store.component.html",
+  styleUrl: "./counter-store.component.css",
 })
 export class CounterStoreComponent {
   counter$: Observable<number>;
@@ -269,11 +272,11 @@ export class CounterStoreComponent {
     this.store.dispatch(counterActions.decrement());
   }
 }
-
 ```
 
 ### 7. Update counter-store.component.html:
-       Bind buttons to dispatch actions and display store-managed counter.
+
+Bind buttons to dispatch actions and display store-managed counter.
 
 ```html
 <h2>Counter from Store: {{ counter$ | async }}</h2>
@@ -284,48 +287,43 @@ export class CounterStoreComponent {
 
 #### Verify with Redux DevTools
 
-Confirm that the counter (Counter froom Store) value is managed by NgRx and updates correctly. 
-
+Confirm that the counter (Counter froom Store) value is managed by NgRx and updates correctly.
 
 ### Backup branch
 
 [exercise/3-ngrx-counter-store](https://github.com/devonfw-ng-adv-training/ngrx_recap/tree/exercise/3-ngrx-counter-store) and it will be used in the next step
 
-
 ## Exercise 4: Add NgRx Effect for Delayed Increment
 
 ### Goal:
-Add an effect that dispatches increment after a 5-second delay. 
+
+Add an effect that dispatches increment after a 5-second delay.
 
 ### Steps:
 
-### 1. Add NgRx Effect
-    
-    ng add @ngrx/effects@17.1.1
-
-### 2. Create file:src/app/store/counter.effects.ts
+### 1. Create file:src/app/store/counter.effects.ts
 
 ```ts
 import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { delay, map } from "rxjs";
-import * as counterActions from '../store/counter.actions';
+import * as counterActions from "../store/counter.actions";
 
 @Injectable()
 export class CounterEffects {
-    constructor(private actions$: Actions) {}
+  constructor(private actions$: Actions) {}
 
-    delayedIncrement$ = createEffect(() =>
-        this.actions$.pipe(
-            ofType(counterActions.delayedIncrement),
-            delay(5000), // Delay by 5 seconds
-            map(() => counterActions.increment())
-        )
-    );
+  delayedIncrement$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(counterActions.delayedIncrement),
+      delay(5000), // Delay by 5 seconds
+      map(() => counterActions.increment()),
+    ),
+  );
 }
 ```
 
-### 3. Register it in app.module.ts
+### 2. Register it in app.module.ts
 
 ```ts
 import { counterReducer } from './store/counter.reducer';
@@ -339,7 +337,7 @@ import { CounterEffects } from './store/counter.effects';
 })
 ```
 
-### 4. Update counter-store.component.ts
+### 3. Update counter-store.component.ts
 
 ```ts
 delayedIncrement() {
@@ -347,7 +345,7 @@ delayedIncrement() {
 }
 ```
 
-### 5. Update counter-store.component.html
+### 4. Update counter-store.component.html
 
 ```html
 <button (click)="delayedIncrement()">Delay+</button>
